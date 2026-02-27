@@ -1,0 +1,17 @@
+{
+  "name": "runtucomic",
+  "version": "0.1.0",
+  "description": "闰土工作室漫画网站",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["comic", "manga"],
+  "author": "runtu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
