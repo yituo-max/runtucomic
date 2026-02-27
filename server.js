@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+
+app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'js')));
+app.use(express.static(path.join(__dirname, 'img')));
+app.use(express.static(path.join(__dirname, 'video')));
+app.use(express.static(path.join(__dirname, 'database')));
+app.use(express.static(path.join(__dirname)));
 
 const parseMarkdownTable = (content) => {
     const lines = content.split('\n');
