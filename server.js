@@ -199,7 +199,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`服务器运行在 http://localhost:${PORT}`);
-    console.log(`API 地址: http://localhost:${PORT}/api/comics`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`服务器运行在 http://localhost:${PORT}`);
+        console.log(`API 地址: http://localhost:${PORT}/api/comics`);
+    });
+}
+
+module.exports = app;
