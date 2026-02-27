@@ -201,6 +201,14 @@ app.get('/api/data-info', (req, res) => {
     });
 });
 
+app.get('/comic.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'comic.html'));
+});
+
+app.get('/chapter.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'chapter.html'));
+});
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
