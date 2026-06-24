@@ -7,8 +7,10 @@ const initSqlJs = require('sql.js');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// 数据库文件路径
-const dbPath = path.join(__dirname, 'database', 'comic.db');
+// 数据库文件路径（Vercel 环境从 api/ 读取，本地从 database/ 读取）
+const dbPath = fs.existsSync(path.join(__dirname, 'api', 'comic.db'))
+    ? path.join(__dirname, 'api', 'comic.db')
+    : path.join(__dirname, 'database', 'comic.db');
 
 // 加载数据库（sql.js 是异步初始化）
 let db = null;

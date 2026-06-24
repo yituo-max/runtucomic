@@ -1,3 +1,4 @@
 public/video/
 comic-data/
 sync-db.js
+database/comic.db

@@ -178,6 +178,11 @@ console.log(`漫画总数: ${folders.length}`);
 console.log(`章节总数: ${total}`);
 console.log(`数据库位置: ${dbPath}`);
 
+// 复制一份到 api/ 目录供 Vercel 部署使用
+const apiDbPath = path.join(baseDir, 'api', 'comic.db');
+fs.copyFileSync(dbPath, apiDbPath);
+console.log(`已复制到: ${apiDbPath}`);
+
 // 验证数据
 const comicCount = db.prepare('SELECT COUNT(*) as count FROM comics').get().count;
 const chapterCount = db.prepare('SELECT COUNT(*) as count FROM chapters').get().count;
