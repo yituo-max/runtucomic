@@ -1,0 +1,850 @@
+/* index样式 */
+    body { 
+        background-color: #000; 
+        color: #fff; 
+        font-family: 'Inter', sans-serif; 
+    }
+    .container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px 100px;
+        position: relative;
+    }
+    /* 导航栏 */
+    .nav_logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        /* width:20%; */
+    }
+    .nav_logo1 {
+        height: 50px;
+    }
+    .nav_logo p {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .nav_list {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+    }
+
+    .nav_list ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    .nav_list ul li {
+        font-size: 20px;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: auto;
+        position: relative;
+        z-index: 1;
+    }
+    .search input{
+        width: 350px;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 20px;
+        border-radius: 20px;
+        background-color: #4a4a4a;
+        border: 1px solid #666;
+        color: #fff;
+        display: block;
+    }
+
+    .search input:focus {
+        outline: none;
+        border-color: #888;
+        background-color: #5a5a5a;
+    }
+
+    .search input::placeholder {
+        color: #aaa;
+    }
+    .search button {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .search button img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    .search button:hover {
+        transform: scale(1.1);
+    }
+    .header{
+        height: 100vh;
+    }
+    /* 英雄区域 */
+    .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .hero .container2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        text-align: center;
+    }
+    .hero img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+    }
+    .hero .container2_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero .container2_text h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    .hero .container2_text h1 span {
+
+    }
+    .hero .container2_text h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .hero .container2_text p {
+        padding: 0 100px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #848383;
+    }
+    .hero .container2_text a {
+        margin-top: 50px;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: #464343;
+        background-color: #eeeeee;
+        border-radius: 40px;
+        transition: transform 0.3s ease;
+    }
+    .hero .container2_text a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero .down_arrow {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero .down_arrow img {
+        width: 100px;
+        height: 100px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 50%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    /* 动态漫画区域 */
+    .dynamic_comic {
+        padding: 50px 0;
+        width: 100%;
+    }
+
+    .dynamic_comic .container3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+    }
+
+    .dynamic_comic .container3 > h2 {
+
+    }
+
+    .dynamic_comic .container3 > p {
+        color: #888;
+        max-width: 600px;
+    }
+
+    .dynamic_comic .container3 .comic_list {
+        width: 100%;
+        max-width: 80%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+
+    .dynamic_comic .container3 .comic_list video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+    /* 漫画库区域 */
+    .comic_library {
+        padding: 50px 0;
+        width: 100%;
+    }
+    .comic_library .container4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .comic_library .container4 .text {
+        margin-bottom: 30px;
+    }
+    .comic_library .container4 .comic_cover ul {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .comic_library .container4 .comic_cover ul li{
+        position: relative;
+        display: flex;
+        width:25%;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    .comic_library .container4 .comic_cover ul li:hover{
+    transform: scale(1.05); 
+    cursor: pointer;
+    }
+    .comic_library .container4 .comic_cover ul li img{
+        border-radius: 10px;
+    }
+    .comic_library .container4 .comic_cover ul li .comic_info{
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .comic_library .container4 .comic_cover ul li .comic_info h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .comic_library .container4 .comic_cover ul li .comic_info p {
+        font-size: 16px;
+        color: #888;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .comic_library .container4 .more {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .comic_library .container4 .more button {
+        padding: 12px 30px;
+        font-size: 12px;
+        color: #2e2d2d;
+        background-color: #eae6e6;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .comic_library .more button:hover {
+        background-color: #666;
+        transform: scale(1.05);
+    }
+
+    .comic_library .container4 .comic_cover ul li.hidden {
+        display: none;
+    }
+    /* 热门推荐 */
+    .hot_recommend {
+        padding: 50px 0;
+        width: 100%;
+    }
+    .hot_recommend .container5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .hot_recommend .container5 .text {
+        margin-bottom: 30px;
+    }
+
+    .hot_recommend .container5 .comic_cover2 {
+        width: 100%;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul::-webkit-scrollbar-track {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul::-webkit-scrollbar-thumb {
+        background-color: #4a4a4a;
+        border-radius: 10px;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul li {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        width: 280px;
+        height: 400px;
+        scroll-snap-align: start;
+        transition: all 0.3s ease;
+    }
+    .hot_recommend .container5 .comic_cover2 ul li:hover{
+    transform: scale(1.05); 
+    cursor: pointer;
+    }
+    .hot_recommend .container5 .comic_cover2 ul li img{
+        border-radius: 10px;
+    }
+    .hot_recommend .container5 .comic_cover2 ul li .comic_info{
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul li .comic_info h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .hot_recommend .container5 .comic_cover2 ul li .comic_info p {
+        font-size: 16px;
+        color: #888;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 页脚区域 */
+    .footer {
+        padding: 50px 0;
+        width: 100%;
+        /* background-color: #1a1a1a; */
+        color: #fff;
+    }
+    .footer .container6 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .footer .container6 .about1 {
+        background-color: #1a1818;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .footer .container6 .about1 .about1_text {
+        margin-left: 100px;
+        width: 50%;
+    }
+    .footer .container6 .about1 .about1_text h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .footer .container6 .about1 .about1_text p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #888;
+    }
+    .footer .container6 .about1 .logo2 {
+
+        width: 50%;
+    }
+    .footer .container6 .about1 .logo2 img {
+        margin-left: 200px;
+        border-radius: 50px;
+        width: 60%;
+        height: auto;
+    }
+    .footer .container6 .about2 {
+        background-color: #1a1818;
+        flex-direction: column;
+        margin-top: 100px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .footer .container6 .about2 .about2_text {
+        text-align: center;
+        /* width: 50%; */
+    }
+    .footer .container6 .about2 .about2_text h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .footer .container6 .about2 .about2_text p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #888;
+    }
+    .footer .container6 .about2 .logo3 {
+        border-radius: 20px;
+        margin-top: 20px;
+        background-color: #fff;
+        height: 250px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    .footer .container6 .about2 .logo3 img {
+        width: 60%;
+        height: auto;
+    }
+    .footer .container6 .about2 .logo3:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    .footer .container6 .about3 {
+        border-top: 1px solid #333;
+        /* background-color: #1a1818; */
+        /* flex-direction: column; */
+        margin-top: 50px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .footer .container6 .about3 .info {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .footer .container6 .about3 .info img {
+        width: 30px;
+        height: auto;
+    }
+    .footer .container6 .about3 .info h3 {
+        font-size: 24px;
+        /* margin-bottom: 20px; */
+    }
+    .footer .container6 .about3 .info p{
+        width: 100%;
+        /* word-wrap: break-word;
+        word-break: break-word; */
+    }
+    .footer .container6 .about3 .info2{
+        margin-bottom: 10px;
+        padding-right: 200px;
+    }
+    .footer .container6 .about3 .info2 h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .footer .container6 .about3 .info2 li{
+        font-size: 15px;
+        line-height: 1.6;
+        color: #a9a5a5;
+        /* word-wrap: break-word;
+        word-break: break-word; */
+    }
+    .footer .container6 .about3 .info3 {
+        margin-bottom: 10px;
+        padding-right: 100px;
+    }
+    .footer .container6 .about3 .info3 h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .footer .container6 .about3 .info3 li{
+        font-size: 15px;
+        line-height: 1.6;
+        color: #a9a5a5;
+    }
+
+    /* 响应式设计 - 平板设备 */
+    @media screen and (max-width: 1024px) {
+        .container {
+            padding: 20px 50px;
+            justify-content: space-between;
+        }
+        
+        .nav_logo p {
+            font-size: 24px;
+        }
+        
+        .nav_list ul {
+            gap: 30px;
+        }
+        
+        .nav_list ul li {
+            font-size: 18px;
+        }
+        
+        .search input {
+            width: 250px;
+            font-size: 16px;
+        }
+        
+        .footer .container6 {
+            width: 90%;
+        }
+        
+        .footer .container6 .about1 .about1_text {
+            margin-left: 50px;
+        }
+        
+        .footer .container6 .about1 .logo2 img {
+            margin-left: 100px;
+        }
+        
+        .footer .container6 .about2 {
+            margin-top: 60px;
+        }
+        
+        .footer .container6 .about3 {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer .container6 .about3 .info2,
+        .footer .container6 .about3 .info3 {
+            padding-right: 0;
+            margin-top: 0;
+            margin-left: 100px;
+        }
+    }
+
+    /* 响应式设计 - 手机设备 */
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 15px 20px;
+        }
+        
+        .nav_logo {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .nav_logo1 {
+            height: 40px;
+        }
+        
+        .nav_logo p {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        
+        .nav_list {
+            position: static;
+            transform: none;
+            margin-top: 10px;
+        }
+        
+        .nav_list ul {
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav_list ul li {
+            font-size: 14px;
+        }
+        
+        .search {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        
+        .search input {
+            width: 100%;
+            max-width: 200px;
+            height: 35px;
+            font-size: 14px;
+        }
+        
+        .search button img {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .hero .container2_text h1 {
+            font-size: 40px;
+        }
+        
+        .hero .container2_text h2 {
+            font-size: 20px;
+        }
+        
+        .hero .container2_text p {
+            padding: 0 20px;
+            font-size: 16px;
+        }
+        
+        .hero .container2_text a {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+        
+        .hero .down_arrow img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .dynamic_comic .container3,
+        .comic_library .container4,
+        .hot_recommend .container5,
+        .footer .container6 {
+            width: 95%;
+        }
+        
+        .comic_library .container4 .comic_cover ul li {
+            width: 50%;
+        }
+        
+        .hot_recommend .container5 .comic_cover2 ul li {
+            width: 200px;
+            height: 300px;
+        }
+        
+        .footer .container6 .about1 {
+            flex-direction: column;
+            padding: 15px;
+        }
+        
+        .footer .container6 .about1 .about1_text {
+            margin-left: 0;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .footer .container6 .about1 .about1_text h3 {
+            font-size: 20px;
+        }
+        
+        .footer .container6 .about1 .about1_text p {
+            font-size: 14px;
+        }
+        
+        .footer .container6 .about1 .logo2 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .footer .container6 .about1 .logo2 img {
+            margin-left: 0;
+            width: 50%;
+        }
+        
+        .footer .container6 .about2 {
+            margin-top: 40px;
+            padding: 15px;
+        }
+        
+        .footer .container6 .about2 .about2_text h3 {
+            font-size: 20px;
+        }
+        
+        .footer .container6 .about2 .about2_text p {
+            font-size: 14px;
+        }
+        
+        .footer .container6 .about2 .logo3 {
+            height: 200px;
+            width: 200px;
+        }
+        
+        .footer .container6 .about3 {
+            margin-top: 30px;
+            padding: 15px;
+        }
+        
+        .footer .container6 .about3 .info h3 {
+            font-size: 18px;
+        }
+        
+        .footer .container6 .about3 .info p {
+            font-size: 14px;
+        }
+        
+        .footer .container6 .about3 .info2 h3,
+        .footer .container6 .about3 .info3 h3 {
+            font-size: 16px;
+        }
+        
+        .footer .container6 .about3 .info2 li,
+        .footer .container6 .about3 .info3 li {
+            font-size: 13px;
+        }
+    }
+
+    /* 响应式设计 - 小屏手机 */
+    @media screen and (max-width: 480px) {
+        .container {
+            padding: 10px 15px;
+        }
+        
+        .nav_logo p {
+            font-size: 16px;
+        }
+        
+        .nav_list ul {
+            gap: 15px;
+        }
+        
+        .nav_list ul li {
+            font-size: 12px;
+        }
+        
+        .hero .container2_text h1 {
+            font-size: 32px;
+        }
+        
+        .hero .container2_text h2 {
+            font-size: 18px;
+        }
+        
+        .hero .container2_text p {
+            font-size: 14px;
+        }
+        
+        .comic_library .container4 .comic_cover ul li {
+            width: 100%;
+        }
+        
+        .hot_recommend .container5 .comic_cover2 ul li {
+            width: 160px;
+            height: 240px;
+        }
+        
+        .footer .container6 .about1 .about1_text h3,
+        .footer .container6 .about2 .about2_text h3 {
+            font-size: 18px;
+        }
+        
+        .footer .container6 .about3 .info h3 {
+            font-size: 16px;
+        }
+    }
+

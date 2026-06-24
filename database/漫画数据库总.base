@@ -1,0 +1,1058 @@
+views:
+  - type: table
+    name: a1-绝对蝙蝠侠-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a1-绝对蝙蝠侠-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a2-蝙蝠侠2025-v4-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a2-蝙蝠侠2025-v4-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a3-蝙蝠侠2016-v3-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a3-蝙蝠侠2016-v3-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a4-dc宇宙新史-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a4-dc宇宙新史-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a5-绝对超人-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a5-绝对超人-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a6-绝对神奇女侠-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a6-绝对神奇女侠-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a7-绝对绿灯侠-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a7-绝对绿灯侠-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a8-绝对闪电侠-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a8-绝对闪电侠-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a9-绝对火星猎人-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a9-绝对火星猎人-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a10-绝对蝙蝠侠-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a10-绝对蝙蝠侠-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a11-蝙蝠侠2025-v4-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a11-蝙蝠侠2025-v4-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a12-蝙蝠侠2016-v3-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a12-蝙蝠侠2016-v3-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a13-dc宇宙新史-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a13-dc宇宙新史-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a14-绝对超人-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a14-绝对超人-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a15-绝对神奇女侠-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a15-绝对神奇女侠-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a16-绝对绿灯侠-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a16-绝对绿灯侠-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a17-绝对闪电侠-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a17-绝对闪电侠-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a18-绝对火星猎人-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a18-绝对火星猎人-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a19-无敌少侠大全-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a19-无敌少侠大全-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a20-无敌少侠大全-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a20-无敌少侠大全-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a21-神奇女侠v6-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a21-神奇女侠v6-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a22-神奇女侠v6-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a22-神奇女侠v6-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a23-猛禽小队：封面特辑（2023）
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a23-猛禽小队：封面特辑（2023）")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a24-小丑_哈莉奎茵：封面特辑（2023）
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a24-小丑_哈莉奎茵：封面特辑（2023）")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a25-猫女：封面特辑（2023）
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a25-猫女：封面特辑（2023）")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a26-毒藤女：封面特辑（2023）
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a26-毒藤女：封面特辑（2023）")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a27-神力女孩：封面特辑（2024）
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a27-神力女孩：封面特辑（2024）")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a28-DC_K.O._(2025-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a28-DC_K.O._(2025-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a29-DC_K.O._(2025-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a29-DC_K.O._(2025-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a30-DC_K.O._Boss_Battle_(2026-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a30-DC_K.O._Boss_Battle_(2026-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a31-DC_K.O._Boss_Battle_(2026-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a31-DC_K.O._Boss_Battle_(2026-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a32-DC_K.O._Harley_Quinn_vs._Zatanna_(2025-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a32-DC_K.O._Harley_Quinn_vs._Zatanna_(2025-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a33-DC_K.O._Harley_Quinn_vs._Zatanna_(2025-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a33-DC_K.O._Harley_Quinn_vs._Zatanna_(2025-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a34-DC：邻家超级少女(2026-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a34-DC：邻家超级少女(2026-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a35-DC：邻家超级少女(2026-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a35-DC：邻家超级少女(2026-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a36-超级少女：明日之姝-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a36-超级少女：明日之姝-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a37-超级少女：明日之姝-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a37-超级少女：明日之姝-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a38-超级少女v8（2025）-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a38-超级少女v8（2025）-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a39-超级少女v8（2025）-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a39-超级少女v8（2025）-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a40-蝙蝠侠 _ 超人：世界最佳搭档-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a40-蝙蝠侠 _ 超人：世界最佳搭档-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a41-蝙蝠侠 _ 超人：世界最佳搭档-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a41-蝙蝠侠 _ 超人：世界最佳搭档-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a42-DC K.O. Knightfight (2025-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a42-DC K.O. Knightfight (2025-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a43-DC K.O. Knightfight (2025-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a43-DC K.O. Knightfight (2025-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a44-哥谭魅影：情伤-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a44-哥谭魅影：情伤-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a46-超人V6-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a46-超人V6-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a47-超人V6-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a47-超人V6-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a48-DC_K.O.少年激斗特辑-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a48-DC_K.O.少年激斗特辑-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a49-DC_K.O.少年激斗特辑-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a49-DC_K.O.少年激斗特辑-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a50-DC_K.O.红头罩VS.小丑-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a50-DC_K.O.红头罩VS.小丑-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a51-DC_K.O.红头罩VS.小丑-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a51-DC_K.O.红头罩VS.小丑-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a52-DC_K.O.超人VS.原子队长-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a52-DC_K.O.超人VS.原子队长-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a53-DC_K.O.超人VS.原子队长-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a53-DC_K.O.超人VS.原子队长-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a54-DC_K.O.绿灯侠-星际大暴摔-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a54-DC_K.O.绿灯侠-星际大暴摔-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a55-DC_K.O.绿灯侠-星际大暴摔-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a55-DC_K.O.绿灯侠-星际大暴摔-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a56-闪电侠v6-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a56-闪电侠v6-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a57-闪电侠v6-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a57-闪电侠v6-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a58-扎塔娜v3-2025-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a58-扎塔娜v3-2025-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a59-扎塔娜v3-2025-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a59-扎塔娜v3-2025-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a61-扎塔娜v2-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a61-扎塔娜v2-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a63-扎塔娜v1-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a63-扎塔娜v1-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a64-G_nort_s_Illustrated_Swimsuit_Edition-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a64-G_nort_s_Illustrated_Swimsuit_Edition-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a65-超人之夏特刊-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a65-超人之夏特刊-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a66-超人之夏特刊-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a66-超人之夏特刊-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a67-Batman_The_Long_Halloween_Catwoman_When_In_Rome_Deluxe_Edition_(2022)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a67-Batman_The_Long_Halloween_Catwoman_When_In_Rome_Deluxe_Edition_(2022)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a69-Batman_Uncovered_(2024-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a69-Batman_Uncovered_(2024-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a70-DC_Pride_Uncovered_(2024-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a70-DC_Pride_Uncovered_(2024-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+    columnSize:
+      file.name: 109
+      note.comic-title: 274
+      note.cover-url: 101
+  - type: table
+    name: a71-DC_x_AEW_(2026-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a71-DC_x_AEW_(2026-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a73-哥谭魅影2024-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a73-哥谭魅影2024-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a75-哈莉奎茵在天堂-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a75-哈莉奎茵在天堂-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a77-哈莉奎茵封面特辑2022
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a77-哈莉奎茵封面特辑2022")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a78-哥谭魅影封面特辑2024
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a78-哥谭魅影封面特辑2024")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a79-不朽传奇蝙蝠侠-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a79-不朽传奇蝙蝠侠-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a81-死侍_蝙蝠侠漫威联动特刊2025-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a81-死侍_蝙蝠侠漫威联动特刊2025-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a86-Disney_Villains_Ursula_(2026-)-中
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a86-Disney_Villains_Ursula_(2026-)-中")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a87-Donald_Duck(2025)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a87-Donald_Duck(2025)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a89-哥谭魅影：不适轨道-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a89-哥谭魅影：不适轨道-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a91-Primer_Clashing_Colors_(2024-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a91-Primer_Clashing_Colors_(2024-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a93-灵蝶：忍者2026-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a93-灵蝶：忍者2026-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a95-小淘气(2026)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a95-小淘气(2026)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a97-Stitch_(2025-)-英
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a97-Stitch_(2025-)-英")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
+  - type: table
+    name: a99-神奇女侠封面特辑2024
+    filters:
+      and:
+        - file.inFolder("comic/runtucomic-main/comic-data/a99-神奇女侠封面特辑2024")
+    order:
+      - file.name
+      - comic-id
+      - comic-title
+      - cover-url
+      - chapter-id
+      - chapter-title
+      - download-link
