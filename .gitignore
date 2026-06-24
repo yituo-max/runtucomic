@@ -3,6 +3,5 @@ node_modules/
 *.log
 .env
 .vscode/
-*.db
 *.db-wal
 *.db-shm
