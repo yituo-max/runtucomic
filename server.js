@@ -25,12 +25,8 @@ let dbReady = initSqlJs().then(SQL => {
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'css')));
-app.use(express.static(path.join(__dirname, 'js')));
-app.use(express.static(path.join(__dirname, 'img')));
-app.use(express.static(path.join(__dirname, 'video')));
-app.use(express.static(path.join(__dirname, 'database')));
-app.use(express.static(path.join(__dirname)));
+// 静态文件从 public/ 目录提供（Vercel 也使用 public/）
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 去掉标题中的 "a数字-" 前缀（如 "a1-绝对蝙蝠侠-英" → "绝对蝙蝠侠-英"）
 function cleanTitle(title) {
@@ -148,15 +144,15 @@ app.get('/api/chapter/:comicId/:chapterId', waitForDb, (req, res) => {
 });
 
 app.get('/comic.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'comic.html'));
+    res.sendFile(path.join(__dirname, 'public', 'comic.html'));
 });
 
 app.get('/chapter.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'chapter.html'));
+    res.sendFile(path.join(__dirname, 'public', 'chapter.html'));
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 if (require.main === module) {
