@@ -5,6 +5,17 @@ function optimizeImg(url, w = 3840, q = 75) {
     return `/_vercel/image?url=${encodeURIComponent(url)}&w=${w}&q=${q}`;
 }
 
+// 给 img 元素绑定 onerror 回退：优化版失败时改用原始 URL
+function attachImgFallback(img, originalUrl) {
+    if (!originalUrl || !originalUrl.startsWith('http') || location.hostname === 'localhost') return;
+    img.addEventListener('error', function handler() {
+        if (img.src !== originalUrl) {
+            img.removeEventListener('error', handler);
+            img.src = originalUrl;
+        }
+    }, { once: false });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const comicId = urlParams.get('comicId');
@@ -206,8 +217,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const img = document.createElement('img');
                     img.loading = 'lazy';
-                    img.src = optimizeImg(imageUrl.trim());
+                    const originalUrl = imageUrl.trim();
+                    img.src = optimizeImg(originalUrl);
                     img.alt = `第${index + 1}页`;
+                    attachImgFallback(img, originalUrl);
                     img.style.width = '100%';
                     img.style.height = 'auto';
                     img.style.borderRadius = '10px';
