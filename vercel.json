@@ -1,4 +1,7 @@
 {
+  "images": {
+    "domains": ["i.ibb.co"]
+  },
   "functions": {
     "api/index.js": {
       "includeFiles": "comic-data/**"
