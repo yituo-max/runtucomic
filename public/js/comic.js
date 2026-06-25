@@ -1,3 +1,9 @@
+// Vercel 图片优化（本地开发直接返回原 URL）
+function optimizeImg(url, w = 300, q = 75) {
+    if (!url || !url.startsWith('http') || location.hostname === 'localhost') return url;
+    return `/_vercel/image?url=${encodeURIComponent(url)}&w=${w}&q=${q}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const comicId = urlParams.get('id');
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (coverElement) {
-            coverElement.src = comic.cover || 'img/01.jpg';
+            coverElement.src = optimizeImg(comic.cover || 'img/01.jpg', 400);
             coverElement.alt = comic.title;
         }
 
@@ -94,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const img = document.createElement('img');
             img.loading = 'lazy';
-            img.src = comic.cover || 'img/01.jpg';
+            img.src = optimizeImg(comic.cover || 'img/01.jpg');
             img.alt = comic.title;
             
             const info = document.createElement('div');
