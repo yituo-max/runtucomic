@@ -1,6 +1,6 @@
 {
   "images": {
-    "sizes": [300, 400, 640, 750, 828, 1080, 1200],
+    "sizes": [640, 1080, 1920, 2560, 3840],
     "domains": ["i.ibb.co"],
     "minimumCacheTTL": 86400,
     "formats": ["image/avif", "image/webp"]

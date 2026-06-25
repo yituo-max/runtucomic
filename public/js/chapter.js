@@ -1,5 +1,6 @@
 // Vercel 图片优化（本地开发直接返回原 URL）
-function optimizeImg(url, w = 300, q = 75) {
+// 使用大宽度（3840）确保图片不被缩小，仅做格式转换（WebP/AVIF）
+function optimizeImg(url, w = 3840, q = 75) {
     if (!url || !url.startsWith('http') || location.hostname === 'localhost') return url;
     return `/_vercel/image?url=${encodeURIComponent(url)}&w=${w}&q=${q}`;
 }
@@ -205,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const img = document.createElement('img');
                     img.loading = 'lazy';
-                    img.src = optimizeImg(imageUrl.trim(), 1080);
+                    img.src = optimizeImg(imageUrl.trim());
                     img.alt = `第${index + 1}页`;
                     img.style.width = '100%';
                     img.style.height = 'auto';
