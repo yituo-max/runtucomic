@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     pageDiv.setAttribute('data-page', index + 1);
                     
                     const img = document.createElement('img');
+                    img.loading = 'lazy';
                     img.src = imageUrl.trim();
                     img.alt = `第${index + 1}页`;
                     img.style.width = '100%';

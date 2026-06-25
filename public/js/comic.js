@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const li = document.createElement('li');
             
             const img = document.createElement('img');
+            img.loading = 'lazy';
             img.src = comic.cover || 'img/01.jpg';
             img.alt = comic.title;
             
