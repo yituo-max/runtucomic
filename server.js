@@ -2,37 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
-const initSqlJs = require('sql.js');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// 数据库文件路径（Vercel 环境从 api/ 读取，本地从 database/ 读取）
-const dbPath = fs.existsSync(path.join(__dirname, 'api', 'comic.db'))
-    ? path.join(__dirname, 'api', 'comic.db')
-    : path.join(__dirname, 'database', 'comic.db');
-
-// 加载数据库（sql.js 是异步初始化，预加载 WASM 避免运行时路径问题）
-let db = null;
-let dbReady = (async () => {
-    try {
-        const wasmPath = path.join(__dirname, 'node_modules', 'sql.js', 'dist', 'sql-wasm.wasm');
-        const wasmBinary = fs.readFileSync(wasmPath);
-        const SQL = await initSqlJs({ wasmBinary });
-        const fileBuffer = fs.readFileSync(dbPath);
-        db = new SQL.Database(fileBuffer);
-        console.log('数据库加载成功');
-        return db;
-    } catch (err) {
-        console.error('数据库加载失败:', err.message);
-        return null;
-    }
-})();
+// 漫画数据目录
+const comicDataDir = path.join(__dirname, 'comic-data');
 
 app.use(cors());
 app.use(express.json());
 
-// 静态文件从 public/ 目录提供（Vercel 也使用 public/）
+// 静态文件从 public/ 目录提供
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 去掉标题中的 "a数字-" 前缀（如 "a1-绝对蝙蝠侠-英" → "绝对蝙蝠侠-英"）
@@ -41,46 +21,91 @@ function cleanTitle(title) {
     return title.replace(/^a\d+-/, '');
 }
 
-// 等待数据库就绪的中间件
-async function waitForDb(req, res, next) {
-    if (!db) {
-        await dbReady;
+// 解析单个 .md 文件，返回 front matter 和图片 URL 列表
+function parseMarkdown(filePath) {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const result = { frontMatter: {}, pageUrls: [] };
+
+    // 提取 YAML front matter
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (fmMatch) {
+        const lines = fmMatch[1].split('\n');
+        for (const line of lines) {
+            const idx = line.indexOf(':');
+            if (idx === -1) continue;
+            const key = line.slice(0, idx).trim();
+            const value = line.slice(idx + 1).trim();
+            result.frontMatter[key] = value;
+        }
     }
-    if (!db) {
-        res.status(500).json({ error: '数据库不可用' });
-        return;
+
+    // 提取图片 URL（front matter 之后，以 https 开头的行）
+    const afterFm = content.slice(fmMatch ? fmMatch[0].length : 0);
+    const urlLines = afterFm.split('\n');
+    for (const line of urlLines) {
+        const trimmed = line.trim();
+        if (trimmed.startsWith('http')) {
+            result.pageUrls.push(trimmed);
+        }
     }
-    next();
+
+    return result;
 }
 
-// 执行参数化查询，返回对象数组
-function queryAll(sql, params = []) {
-    const stmt = db.prepare(sql);
-    stmt.bind(params);
-    const rows = [];
-    while (stmt.step()) {
-        rows.push(stmt.getAsObject());
+// 从文件夹名提取漫画 ID 和标题
+function parseFolderName(folderName) {
+    const match = folderName.match(/^(a\d+)-(.+)$/);
+    if (match) {
+        return { id: match[1], title: folderName };
     }
-    stmt.free();
-    return rows;
+    return { id: folderName, title: folderName };
 }
 
-// 执行参数化查询，返回第一条记录
-function queryOne(sql, params = []) {
-    const rows = queryAll(sql, params);
-    return rows.length > 0 ? rows[0] : null;
+// 自然排序比较（a1-b2 排在 a1-b10 前面）
+function naturalCompare(a, b) {
+    return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+}
+
+// 获取所有漫画文件夹
+function getComicFolders() {
+    return fs.readdirSync(comicDataDir)
+        .filter(name => fs.statSync(path.join(comicDataDir, name)).isDirectory())
+        .sort(naturalCompare);
+}
+
+// 获取漫画文件夹下所有章节文件
+function getChapterFiles(comicId, folderName) {
+    const dir = path.join(comicDataDir, folderName);
+    return fs.readdirSync(dir)
+        .filter(name => name.endsWith('.md'))
+        .sort(naturalCompare);
+}
+
+// 从文件名提取章节 ID（a1-b1.md → a1-b1）
+function getChapterId(fileName) {
+    return fileName.replace(/\.md$/, '');
 }
 
 // 获取漫画列表
-app.get('/api/comics', waitForDb, (req, res) => {
+app.get('/api/comics', (req, res) => {
     try {
-        const rows = queryAll('SELECT id, title, cover, chapter_count FROM comics ORDER BY id');
-        const data = rows.map(row => ({
-            id: row.id,
-            title: cleanTitle(row.title),
-            cover: row.cover,
-            chapterCount: row.chapter_count
-        }));
+        const folders = getComicFolders();
+        const data = folders.map(folder => {
+            const { id, title } = parseFolderName(folder);
+            const chapterFiles = getChapterFiles(id, folder);
+            // 取第一章的封面作为漫画封面
+            let cover = '';
+            if (chapterFiles.length > 0) {
+                const parsed = parseMarkdown(path.join(comicDataDir, folder, chapterFiles[0]));
+                cover = parsed.frontMatter['cover-url'] || '';
+            }
+            return {
+                id,
+                title: cleanTitle(title),
+                cover,
+                chapterCount: chapterFiles.length
+            };
+        });
         res.json({ success: true, data });
     } catch (error) {
         console.error('查询漫画列表失败:', error);
@@ -89,26 +114,43 @@ app.get('/api/comics', waitForDb, (req, res) => {
 });
 
 // 获取漫画详情和章节列表
-app.get('/api/comic/:id', waitForDb, (req, res) => {
+app.get('/api/comic/:id', (req, res) => {
     const comicId = req.params.id;
     try {
-        const comic = queryOne('SELECT id, title, cover, chapter_count FROM comics WHERE id = ?', [comicId]);
-        if (!comic) {
+        const folders = getComicFolders();
+        const folder = folders.find(f => f.startsWith(comicId + '-'));
+        if (!folder) {
             res.status(404).json({ error: '漫画不存在' });
             return;
         }
 
-        const chapterRows = queryAll('SELECT chapter_id, chapter_title FROM chapters WHERE comic_id = ? ORDER BY chapter_id', [comicId]);
-        const chapters = chapterRows.map(r => ({ chapterId: r.chapter_id, chapterTitle: r.chapter_title }));
+        const { id, title } = parseFolderName(folder);
+        const chapterFiles = getChapterFiles(id, folder);
+
+        // 取第一章的封面
+        let cover = '';
+        if (chapterFiles.length > 0) {
+            const parsed = parseMarkdown(path.join(comicDataDir, folder, chapterFiles[0]));
+            cover = parsed.frontMatter['cover-url'] || '';
+        }
+
+        const chapters = chapterFiles.map(file => {
+            const chapterId = getChapterId(file);
+            const parsed = parseMarkdown(path.join(comicDataDir, folder, file));
+            return {
+                chapterId,
+                chapterTitle: parsed.frontMatter['chapter-title'] || chapterId
+            };
+        });
 
         res.json({
             success: true,
             data: {
-                id: comic.id,
-                title: cleanTitle(comic.title),
-                cover: comic.cover,
-                chapterCount: comic.chapter_count,
-                chapters: chapters
+                id,
+                title: cleanTitle(title),
+                cover,
+                chapterCount: chapterFiles.length,
+                chapters
             }
         });
     } catch (error) {
@@ -118,30 +160,33 @@ app.get('/api/comic/:id', waitForDb, (req, res) => {
 });
 
 // 获取章节内容（含图片URL列表和下载链接）
-app.get('/api/chapter/:comicId/:chapterId', waitForDb, (req, res) => {
+app.get('/api/chapter/:comicId/:chapterId', (req, res) => {
     const { comicId, chapterId } = req.params;
     try {
-        const chapter = queryOne('SELECT chapter_id, comic_id, chapter_title, page_urls, download_link FROM chapters WHERE comic_id = ? AND chapter_id = ?', [comicId, chapterId]);
-        if (!chapter) {
+        const folders = getComicFolders();
+        const folder = folders.find(f => f.startsWith(comicId + '-'));
+        if (!folder) {
+            res.status(404).json({ error: '漫画不存在' });
+            return;
+        }
+
+        const filePath = path.join(comicDataDir, folder, `${chapterId}.md`);
+        if (!fs.existsSync(filePath)) {
             res.status(404).json({ error: '章节不存在' });
             return;
         }
 
-        let pageUrls = [];
-        try {
-            pageUrls = JSON.parse(chapter.page_urls || '[]');
-        } catch (e) {
-            pageUrls = [];
-        }
+        const parsed = parseMarkdown(filePath);
+        const fm = parsed.frontMatter;
 
         res.json({
             success: true,
             data: {
-                chapterId: chapter.chapter_id,
-                comicId: chapter.comic_id,
-                chapterTitle: chapter.chapter_title,
-                pageUrls: pageUrls,
-                downloadLink: chapter.download_link || ''
+                chapterId: fm['chapter-id'] || chapterId,
+                comicId: fm['comic-id'] || comicId,
+                chapterTitle: fm['chapter-title'] || '',
+                pageUrls: parsed.pageUrls,
+                downloadLink: fm['download-link'] || ''
             }
         });
     } catch (error) {
@@ -166,7 +211,7 @@ if (require.main === module) {
     app.listen(PORT, () => {
         console.log(`服务器运行在 http://localhost:${PORT}`);
         console.log(`API 地址: http://localhost:${PORT}/api/comics`);
-        console.log(`数据库: ${dbPath}`);
+        console.log(`数据目录: ${comicDataDir}`);
     });
 }
 

@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "comic-data/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
