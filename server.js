@@ -12,17 +12,22 @@ const dbPath = fs.existsSync(path.join(__dirname, 'api', 'comic.db'))
     ? path.join(__dirname, 'api', 'comic.db')
     : path.join(__dirname, 'database', 'comic.db');
 
-// 加载数据库（sql.js 是异步初始化）
+// 加载数据库（sql.js 是异步初始化，预加载 WASM 避免运行时路径问题）
 let db = null;
-let dbReady = initSqlJs().then(SQL => {
-    const fileBuffer = fs.readFileSync(dbPath);
-    db = new SQL.Database(fileBuffer);
-    console.log('数据库加载成功');
-    return db;
-}).catch(err => {
-    console.error('数据库加载失败:', err.message);
-    return null;
-});
+let dbReady = (async () => {
+    try {
+        const wasmPath = path.join(__dirname, 'node_modules', 'sql.js', 'dist', 'sql-wasm.wasm');
+        const wasmBinary = fs.readFileSync(wasmPath);
+        const SQL = await initSqlJs({ wasmBinary });
+        const fileBuffer = fs.readFileSync(dbPath);
+        db = new SQL.Database(fileBuffer);
+        console.log('数据库加载成功');
+        return db;
+    } catch (err) {
+        console.error('数据库加载失败:', err.message);
+        return null;
+    }
+})();
 
 app.use(cors());
 app.use(express.json());
